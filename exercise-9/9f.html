@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 9f</title>
+</head>
+<body>
+  <p class="username"></p>
+  <input type="text" placeholder="Name" class="js-user-name" onkeydown="handleKeydownSubmit(event)">
+  <button onclick="handleSubmit()">Submit</button>
+  <script>
+    function handleSubmit() {
+      const inputedUsername = document.querySelector('.js-user-name'); 
+      document.querySelector('.username').innerText = `Your name is: ${inputedUsername.value}`;
+    }
+    function handleKeydownSubmit(event){
+      if(event.key === 'Enter'){
+        handleSubmit();
+      }
+    }
+  </script>
+  
+</body>
+</html>

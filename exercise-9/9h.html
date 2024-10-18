@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 9h</title>
+</head>
+<body>
+  <p class="js-display-text"></p>
+  <input type="text" placeholder="Type something" onkeyup="handleInput(event)">
+  <script>
+    let inputText = '';
+    function handleInput(event){
+      const key = event.key;
+      console.log(event);
+      const isLetterOrSpace = /^[a-zA-Z ]$/.test(key);
+      if(isLetterOrSpace){
+        if(key === " "){
+          inputText += " ";
+        }
+        inputText += key;
+        document.querySelector('.js-display-text').innerText = inputText;
+      }
+    }
+  </script>
+</body>
+</html>
