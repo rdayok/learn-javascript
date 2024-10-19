@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9i</title> 
+  </head>
+  <body>
+
+    <button onclick="
+      console.log(`Cart quantity: ${cartQuantity}`); 
+    ">
+      Show Quantity
+    </button>
+
+    <button onclick="
+      updateCartQuantity(1);
+    ">
+      Add to cart
+    </button>
+
+    <button onclick="
+      updateCartQuantity(-1);
+    ">
+      Remove from cart
+    </button>
+
+    <button onclick="
+      updateCartQuantity(2);
+    ">
+      +2
+    </button>
+
+    <button onclick="
+      updateCartQuantity(3);
+    ">
+      +3
+    </button>
+
+    <button onclick="
+      updateCartQuantity(4);
+    ">
+      +4
+    </button>
+
+    <button onclick="
+      updateCartQuantity(5);
+    ">
+      +5
+    </button>
+
+    <button onclick="
+      updateCartQuantity(-2);
+    ">
+      -2
+    </button>
+
+    <button onclick="
+      updateCartQuantity(-3);
+    ">
+      -3
+    </button>
+
+    <button onclick="
+      cartQuantity = 0;
+      displayCartContent();
+    ">
+      Reset Cart
+    </button>
+    <p class="js-cart-content"></p>
+
+    <script>
+      let cartQuantity = 0;
+      function updateCartQuantity(command){
+        if((cartQuantity + command) < 0 ){
+          alert('Not enough items in the cart');
+          return;
+        } else if((cartQuantity + command) > 10){
+          alert('The cart is full');
+          return;
+        }
+        cartQuantity += command;
+        displayCartContent();
+      }
+      function displayCartContent(){
+        const cartContentElement = document.querySelector('.js-cart-content');
+        cartContentElement.innerText = `Cart quantity: ${cartQuantity}`;
+      }
+    </script> 
+  </body>
+</html>
