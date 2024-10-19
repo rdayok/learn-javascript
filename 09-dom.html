@@ -3,56 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Projects</title> 
+    <title>DOM</title> 
   </head>
   <body>
-    <p>YouTube Subscribe Button</p>
-    <button onclick="
-      subscribe();
-    " class="js-subscribe-button">
-      Subscribe
+    <button>
+      hello
     </button>
-
-    <p>Amazon Shipping Calculator</p>
-    <input placeholder="Cost of order" class="js-cost-input" onkeydown="
-      handleCostKeydown(event);
-    ">
-    <button onclick="
-      calculateTotal();
-    ">Calculate</button>
-    <p class="js-total-cost"></p>
-
+    <button class="js-button">Second button</button>
     <script>
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button')
+        .innerHTML = 'Changed';
 
-      String(25);
-      console.log('25' - 5)
+      const buttonElement = document.querySelector('.js-button');
 
-      function handleCostKeydown(event){
-        if(event.key === 'Enter'){
-          calculateTotal();
-        }
-      }
+      console.log(buttonElement);
+      /*
+      console.log(document.title);
+      document.title = 'Changed';
 
-      function calculateTotal(){
-        const inputElement = document.querySelector('.js-cost-input');
-        let cost = Number(inputElement.value);
-        if(cost < 40){
-          cost += 10;
-        }
+      console.log(document.body);
+      console.log(typeof document.body);
 
-        document.querySelector('.js-total-cost')
-          .innerHTML = `$${cost}`;
-      }
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = 'Changed';
+      document.body.innerHTML = '<button>Good job!</button>';
+       */
 
-      function subscribe(){
-        const buttonElement = document.querySelector('.js-subscribe-button');
-        if(buttonElement.innerText === 'Subscribe'){
-          buttonElement.innerHTML = 'Subscribed';
-        }else{
-          buttonElement.innerHTML = 'Subscribe';
-        }
-      }
-      
+      // document.body.innerHTML = 'hello';
+      // document.title = 'Good job!';
     </script> 
   </body>
 </html>
